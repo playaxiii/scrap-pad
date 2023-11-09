@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f9f9f9"
-    tools:context=".LoginActivity">
+    tools:context=".SignupActivity">
 
     <RelativeLayout
-        android:id="@+id/centerline"
+        android:id="@+id/centerline2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
@@ -18,7 +18,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/centerline"
+        android:layout_above="@id/centerline2"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="150dp"
@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/wel_text"
+            android:text="New User"
             android:textColor="#FFBD4D"
             android:textSize="42sp"
             android:textStyle="bold">
@@ -37,7 +37,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Log in to contine"
+            android:text="Nice to see you here"
             android:textColor="#FF8596"
             android:textSize="23sp">
 
@@ -50,13 +50,13 @@
         android:id="@+id/emailInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/centerline"
+        android:layout_above="@id/centerline2"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="10dp">
 
         <EditText
-            android:id="@+id/loginemail"
+            android:id="@+id/signupEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your email"
@@ -68,14 +68,14 @@
         android:id="@+id/passInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/centerline"
+        android:layout_below="@id/centerline2"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="10dp"
         app:passwordToggleEnabled="true">
 
         <EditText
-            android:id="@+id/loginPassword"
+            android:id="@+id/signupPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your Password"
@@ -84,7 +84,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <RelativeLayout
-        android:id="@+id/btnlogin"
+        android:id="@+id/btnSignup"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@id/passInput"
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginStart="8dp"
-            android:text="Log In"
+            android:text="Sign Up"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold">
@@ -108,42 +108,18 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/txtforgotpswdlogin"
+        android:id="@+id/txtwantologin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btnlogin"
+        android:layout_below="@id/btnSignup"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="70dp"
         android:layout_marginRight="20dp"
-        android:text="@string/forgotpass"
+        android:text="Want login?"
         android:textAlignment="center"
         android:textColor="@color/black">
 
     </TextView>
-
-    <RelativeLayout
-        android:id="@+id/btnNewUser"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/button_design">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginStart="8dp"
-            android:text="@string/newUserText"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold">
-
-        </TextView>
-
-    </RelativeLayout>
 
 
 </RelativeLayout>
