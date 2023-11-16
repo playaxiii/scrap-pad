@@ -55,22 +55,21 @@ public class SignupActivity extends AppCompatActivity {
 
                 if (email.isEmpty() || pswd.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "All field required", Toast.LENGTH_SHORT).show();
-                } else if(pswd.length()<7){
+                } else if (pswd.length() < 7) {
                     // Successfully message
                     Toast.makeText(getApplicationContext(), "Password should greater than 7 digits", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     //registered the user to firebase
-                    firebaseAuth.createUserWithEmailAndPassword(email,pswd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    firebaseAuth.createUserWithEmailAndPassword(email, pswd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                           if(task.isSuccessful()){
-                               Toast.makeText(getApplicationContext(),"Registeration succesfully",Toast.LENGTH_SHORT).show();
-                               sendEmailVerification();
-                           }
-                           else {
-                               Toast.makeText(getApplicationContext(),"Registeration Failed",Toast.LENGTH_SHORT).show();
-                               sendEmailVerification();
-                           }
+                            if (task.isSuccessful()) {
+                                Toast.makeText(getApplicationContext(), "Registeration succesfully", Toast.LENGTH_SHORT).show();
+                                sendEmailVerification();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Registeration Failed", Toast.LENGTH_SHORT).show();
+                                sendEmailVerification();
+                            }
                         }
                     });
                 }
@@ -78,21 +77,21 @@ public class SignupActivity extends AppCompatActivity {
         });
 
     }
+
     //send email verification
-    private void sendEmailVerification(){
+    private void sendEmailVerification() {
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-        if(firebaseUser!=null){
+        if (firebaseUser != null) {
             firebaseUser.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
-                    Toast.makeText(getApplicationContext(),"Verificationn email is sent, verify and login",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Verificationn email is sent, verify and login", Toast.LENGTH_SHORT).show();
                     firebaseAuth.signOut();
-                    startActivity(new Intent(SignupActivity.this,LoginActivity.class));
+                    startActivity(new Intent(SignupActivity.this, LoginActivity.class));
                 }
             });
-        }
-        else {
-            Toast.makeText(getApplicationContext(),"Failed to send email verification",Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "Failed to send email verification", Toast.LENGTH_SHORT).show();
         }
     }
 }

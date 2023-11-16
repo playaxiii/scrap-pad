@@ -42,9 +42,9 @@ public class LoginActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
-        if(firebaseUser!=null){
+        if (firebaseUser != null) {
             finish();
-            startActivity(new Intent(LoginActivity.this,NoteActivity.class));
+            startActivity(new Intent(LoginActivity.this, NoteActivity.class));
         }
 
         txtforgot.setOnClickListener(new View.OnClickListener() {
@@ -75,14 +75,13 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "All field are required", Toast.LENGTH_SHORT).show();
                 } else {
                     // we have to send
-                    firebaseAuth.signInWithEmailAndPassword(email,pswd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    firebaseAuth.signInWithEmailAndPassword(email, pswd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(task.isSuccessful()){
+                            if (task.isSuccessful()) {
                                 checkMainVerification();
-                            }
-                            else{
-                                Toast.makeText(getApplicationContext(),"Please enter valid credentials",Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Please enter valid credentials", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -91,15 +90,15 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void checkMainVerification(){
+    private void checkMainVerification() {
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
-        if(firebaseUser.isEmailVerified()){
-            Toast.makeText(getApplicationContext(),"Logged in",Toast.LENGTH_SHORT).show();
+        if (firebaseUser.isEmailVerified()) {
+            Toast.makeText(getApplicationContext(), "Logged in", Toast.LENGTH_SHORT).show();
             finish();
-            startActivity(new Intent(LoginActivity.this,NoteActivity.class));
-        }else {
-            Toast.makeText(getApplicationContext(),"verify your email first",Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(LoginActivity.this, NoteActivity.class));
+        } else {
+            Toast.makeText(getApplicationContext(), "verify your email first", Toast.LENGTH_SHORT).show();
             firebaseAuth.signOut();
         }
     }
