@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "873269544487",
+    "project_id": "scarp-pad",
+    "storage_bucket": "scarp-pad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:873269544487:android:b2ab2f510be4e9a148b002",
+        "android_client_info": {
+          "package_name": "com.avi.scrap_pad"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv-6ElPUiMk060jbT1AIE0LIv5Ze41DiY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
