@@ -30,7 +30,6 @@ public class SignupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-
         txtwantlogin = findViewById(R.id.txtwantologin);
         etemail = findViewById(R.id.signupEmail);
         etpswd = findViewById(R.id.signupPassword);
