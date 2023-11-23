@@ -17,6 +17,7 @@
             android:exported="false" />
         <activity
             android:name=".NoteActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
             android:exported="false" />
         <activity
             android:name=".ForgotPassword"

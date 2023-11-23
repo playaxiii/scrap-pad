@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if (firebaseUser != null) {
             finish();
-            startActivity(new Intent(LoginActivity.this, CreateNote.class));
+            startActivity(new Intent(LoginActivity.this, NoteActivity.class));
         }
 
         txtforgot.setOnClickListener(new View.OnClickListener() {

@@ -25,10 +25,13 @@ public class NoteActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         createnotesfab = findViewById(R.id.btnFloat);
 
+        getSupportActionBar().setTitle("All Notes");
+
         createnotesfab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(NoteActivity.this, CreateNote.class);
+                startActivity(intent);
             }
         });
     }
@@ -38,13 +41,16 @@ public class NoteActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu,menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
         if (itemId == R.id.logout) {
-            firebaseAuth.signOut();
+            if (firebaseAuth != null) {
+                firebaseAuth.signOut();
+            }
             finish();
-            startActivity(new Intent(NoteActivity.this, CreateNote.class));
+            startActivity(new Intent(NoteActivity.this, LoginActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);
