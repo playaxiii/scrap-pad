@@ -5,20 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NoteActivity">
-    
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnFloat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="bottom|end"
-        android:src="@drawable/baseline_add_circle_outline_24"
-        app:maxImageSize="40dp"
-        android:background="#A1F4FB"
-        android:contentDescription="floatbutton">
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="floatButton"
+        android:backgroundTint="#FFEB3B"
+        android:src="@drawable/addicon"
+        app:maxImageSize="40dp">
 
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
